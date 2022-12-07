@@ -1,0 +1,123 @@
+@use "../base/mixin.scss" as mixin;
+
+.slider {
+  top: 40px;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  .slides {
+    height: 50%;
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition: all 0.7s ease-in-out;
+      transform: translateX(100%); //option 1
+      // opacity: 0; //option2
+      &.active {
+        display: block;
+        z-index: 1;
+        transform: translateX(0); //option 1
+        // opacity: 1; //option2
+      }
+      &.next {
+        display: block;
+       
+      }
+      &.prev {
+        display: block;
+        transform: translateX(-100%); //option 1
+      }
+      img {
+        position: relative;
+        object-fit: cover;
+        width: max-content;
+        height: 50%;
+        pointer-events: none;
+        user-select: none;
+      }
+    }
+  }
+  .arrow {
+    position: absolute;
+    top: 20%;
+    align-items:center ;
+    // transform: translateY(100%);
+    height: 50px;
+    width: 50px;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    padding: 3%;
+    background-color: black;
+    @include mixin.tablet {
+      background-size: 30px;
+    }
+    cursor: pointer;
+    &.prev {
+      left: 0;
+      background-position: center;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 46' width='20' height='33'%3E%3Cstyle%3E path %7B fill: white; %7D %3C/style%3E%3Cpath d='m20 44l-20-20 20-20 2.8 2.8-17.1 17.2 17.1 17.1z'%0A/%3E%3C/svg%3E");
+    }
+    &.next {
+      right: 0;
+      background-position: center;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='33' viewBox='0 0 28 46'%3E%3Cstyle%3E path %7B fill: white; %7D %3C/style%3E%3Cpath d='m6.2 42.9l-2.8-2.9 17.1-17.1-17.1-17.1 2.8-2.9 20 20z' /%3E%3C/svg%3E");
+    }
+  }
+}
+
+
+
+@media  screen and (max-width:1080px) {
+    
+
+.slider {
+    .slides .slide img {
+          
+          width: 30vw;
+          height: 30vh;
+         
+        }
+
+        .arrow {
+            
+            top: 10%;
+           
+            height: 50px;
+            width: 50px;
+            background-size: 25px;
+            padding: 3%;
+            
+        }
+      
+    }
+}
+@media  screen and (max-width:560px) {
+    
+
+    .slider {
+        width: 100%;
+        .slides .slide img {
+              
+              width: max-content;
+              height: 20vh;
+             
+            }
+    
+            .arrow {
+                
+                top: 10%;
+               
+                height: 50px;
+                width: 50px;
+                background-size: 25px;
+                padding: 3%;
+                
+            }
+          
+        }
+    }

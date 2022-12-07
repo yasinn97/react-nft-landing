@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root {
+  --blue: #16235e;
+  --darkblue: #020223;
   --orange: #ff8139;
   --pink: #ff3998;
   --green: #39ffa0;
@@ -55,5 +57,5 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--orange);
+  background-color: var(--blue);
 }

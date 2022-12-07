@@ -27,13 +27,13 @@ function App() {
       sr.reveal(
         `
         nav,
-        .home,
-        .free,
-        .clients,
-        .super-rare,
-        .releases,
-        .like,
-        .signup,
+        // .home,
+        // .free,
+        // .clients,
+        // .super-rare,
+        // .releases,
+        // .like,
+        // .signup,
         footer
     `,
         {
@@ -54,12 +54,12 @@ function App() {
       <ScrollToTop />
       <Navbar changeTheme={changeTheme} currentTheme={theme} />
       <Home />
-      <Free />
+      {/* <Free />
       <Clients />
       <SuperRare />
       <Release />
       <Like />
-      <Signup />
+      <Signup /> */}
       <Footer />
     </div>
   );

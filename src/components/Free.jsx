@@ -1,31 +1,34 @@
 import React from "react";
 import Card from "./Card";
 import icon from "../assets/icon.png";
-import super1 from "../assets/super1.png";
+import DrinksBanner from "../assets/drinks-banner.jpeg";
 import release2 from "../assets/release2.png";
 
 export default function Free() {
   return (
     <div className="free">
       <div className="container">
-        <div className="background">
-          <div className="ellipse pink"></div>
-          <div className="ellipse green"></div>
-        </div>
         <div className="content">
-          <div className="image">
+          {/* <div className="image">
             <img src={icon} alt="icon" />
+          </div> */}
+          <div>
+            <h2 className="title">We Have A Wide Range Of Products</h2>
+            <p className="description">Check Out Our Stock!</p>
+            <a href="#Products">
+              <button>View Our Products</button>
+            </a>
           </div>
-          <h2 className="title">Free NFT for early birds</h2>
-          <p className="description">
-            Sign up today and you'll get a free NFT when we launch
-          </p>
+        </div>
+        <div class="cards">
+          {/* <img class="view-products-pic" src={DrinksBanner} alt="" /> */}
         </div>
       </div>
-      <div className="cards">
+
+      {/* <div className="cards">
         <div className="card1">
           <Card
-            image={super1}
+            image={release2}
             series="Gloop Series"
             title="Purple Man"
             price={2.99}
@@ -43,7 +46,17 @@ export default function Free() {
             time={2}
           />
         </div>
-      </div>
+        <div className="card3">
+          <Card
+            image={release2}
+            series="Gloop Series"
+            title="Purple Man"
+            price={3.95}
+            tag="1094"
+            time={2}
+          />
+        </div>
+      </div> */}
     </div>
   );
 }

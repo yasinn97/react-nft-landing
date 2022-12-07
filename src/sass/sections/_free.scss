@@ -2,41 +2,50 @@
   position: relative;
   margin: 5rem 0;
   .container {
-    display: flex;
-    background-color: var(--orange);
+    text-align: center;
+    background-image: url("../../assets/lemons-bg.jpg");
+    box-shadow: inset 0 0 0 2000px rgba(39, 5, 231, 0.3);
+    background-size: 100vw 90vh;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--blue);
     position: relative;
-    height: 25rem;
-    border-radius: 1rem;
+    height: 40vh;
+    border-radius: 2rem;
     overflow: hidden;
     z-index: 1;
     .background {
       z-index: -1;
-      .ellipse {
-        position: absolute;
-        height: 100%;
-        width: 28rem;
-        border-radius: 100%;
-        filter: blur(100px);
-      }
-      .pink {
-        top: -10%;
-        left: -15%;
-        background-color: var(--pink);
-      }
-      .green {
-        top: -10%;
-        right: -15%;
-        background-color: var(--green);
-      }
+      // .ellipse {
+      //   position: absolute;
+      //   height: 100%;
+      //   width: 28rem;
+      //   border-radius: 100%;
+      //   filter: blur(100px);
+      // }
+      // .green1 {
+      //   top: -10%;
+      //   left: -15%;
+      //   background-color: var(--green);
+      // }
+      // .green {
+      //   top: -10%;
+      //   right: -15%;
+      //   background-color: var(--green);
+      // }
     }
     .content {
+      width: 80vw;
+      margin: 0 auto;
+      color: var(--accent-color1);
       z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+     
+      // gap: 1.5rem;
       padding-top: 3rem;
-      padding-left: 5rem;
+      // padding-left: 5rem;
       font-size: 1.3rem;
+      
       .image {
         img {
         }
@@ -45,47 +54,57 @@
         font-size: 2rem;
       }
       .description {
+        display: block;
+      }
+    }
+    button {
+      z-index: 6;
+      margin-top: 5%;
+      color: var(--accent-color1);
+      background-color: var(--background);
+      font-weight: bold;
+      padding: 1rem 3rem;
+      border-radius: 2rem;
+      box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+      border: solid 3px transparent;
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0)
+        ),
+        linear-gradient(101deg, var(--blue), var(--darkblue));
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      box-shadow: 2px 1000px 1px var(--background) inset;
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        box-shadow: none;
       }
     }
   }
   .cards {
-    display: flex;
-    position: absolute;
-    top: -2rem;
-    right: 40%;
-    .card1 {
-      top: 0;
-      position: absolute;
-      transform: rotate(-10deg);
-      z-index: 3;
-      font-size: 0.6rem;
-      .card-image {
-        img {
-          height: 10rem;
-          width: 12rem;
-        }
-      }
-    }
-    .card2 {
-      top: 0;
-      z-index: 2;
-      position: absolute;
-      left: 10rem;
-      transform: rotate(5deg);
-      font-size: 0.7rem;
-      .card-image {
-        img {
-          height: 10rem;
-        }
-      }
+    
+    
+   
+    // z-index: 5;
+    // left: 48%;
+   
+    
+   
+    .view-products-pic{
+      position: relative;
+      width: 100%;
+      height: 40vh;
+      
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  @media screen and (max-width: 1080px) {
     margin: 0;
     .container {
-      padding: 1rem 2rem;
-      height: 40vh;
+      // padding: 1rem 2rem;
+      height: 40vw;
       border-radius: 0;
+      padding: 1rem;
       .background {
         .pink {
           left: -70%;
@@ -95,7 +114,7 @@
         }
       }
       .content {
-        padding: 0;
+        padding: 1rem;
         font-size: 16px;
         gap: 1rem;
         .title {
@@ -104,10 +123,42 @@
       }
     }
     .cards {
-      .card1,
-      .card2 {
-        zoom: 0.3;
+      display: grid;
+      grid-template-rows: 1fr;
+      height: max-content;
+      position: relative;
+      top: -1rem;
+      right: -1rem;
+      .view-products-pic{
+        grid-row-start: 2;
+        grid-row-end: 2;
+        display: flex;
+        flex: wrap;
+        height: 42vw;
+        padding-bottom: 1rem;
+        
+        
       }
     }
   }
+}
+@media screen and (max-width: 570px) {
+  .free{
+    .container{
+      min-height: 230px;
+      .content {
+        .title {
+          font-size: 4vw;
+        }
+        .description {
+        }
+      }
+    }
+    .cards{
+      .view-products-pic{
+        min-height: 240px;
+      }
+    }
+  }
+  
 }

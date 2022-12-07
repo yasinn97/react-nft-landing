@@ -3,14 +3,16 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 import { ImSun } from "react-icons/im";
 import { BsFillMoonFill } from "react-icons/bs";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.ico";
 export default function Navbar({ changeTheme, currentTheme }) {
   const [navState, setNavState] = useState(false);
   return (
     <nav>
       <div className="brand-container">
         <div className="brand">
-          <img src={logo} alt="logo" />
+          <a href="#">
+            <img src={logo} alt="logo" />
+          </a>
         </div>
         <div className="toggle-container">
           <div className="toggle">
@@ -32,16 +34,16 @@ export default function Navbar({ changeTheme, currentTheme }) {
       <div className={`links-container ${navState ? "nav-visible" : ""}`}>
         <ul className="links">
           <li>
-            <a href="#features">Features</a>
+            <a href="#">Home</a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="#About-Us">About</a>
           </li>
           <li>
-            <a href="#launch">Launch</a>
+            <a href="#launch">Products</a>
           </li>
           <li>
-            <a href="#signup">Sign Up</a>
+            <a href="#signup">Contact Us</a>
           </li>
           <li onClick={changeTheme}>
             {currentTheme === "dark" ? (
